@@ -8,7 +8,7 @@
 
 /**
  *
- * \file TASK1.H
+ * \file TASK1.hpp
  *
  * \brief Contains namespace TASK1. Namespace TASK1 contains the implementation
  * of check sum calculation.

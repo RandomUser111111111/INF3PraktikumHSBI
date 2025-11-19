@@ -1,5 +1,5 @@
 /*
- * TASK6.H
+ * TASK6.hpp
  *
  *  Created on: 01.10.2019
  *      Author: aml

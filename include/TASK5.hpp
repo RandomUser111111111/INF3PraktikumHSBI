@@ -8,7 +8,7 @@
 
 /**
  *
- * \file TASK5.H
+ * \file TASK5.hpp
  *
  * \brief Contains the namespace TASK5. Namespace TASK5
  * contains the definition of the interfaces

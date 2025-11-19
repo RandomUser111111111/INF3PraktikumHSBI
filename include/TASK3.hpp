@@ -7,7 +7,7 @@
 
 /**
  *
- * \file TASK3.H
+ * \file TASK3.hpp
  *
  * \brief Contains namespace TASK3. Namespace TASK3 contains the implementation
  * of a the simplified game battle ship.

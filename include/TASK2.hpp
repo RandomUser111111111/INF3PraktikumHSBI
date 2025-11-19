@@ -8,7 +8,7 @@
 
 /**
  *
- * \file TASK2.H
+ * \file TASK2.hpp
  *
  * \brief Contains namespace TASK2. Namespace TASK2 contains the implementation
  * of demo file servers.
@@ -18,8 +18,8 @@
 #ifndef TASK2_H_
 #define TASK2_H_
 
-#include "SIMPLESOCKET.H"
-#include "SHA256.H"
+#include "SIMPLESOCKET.hpp"
+#include "SHA256.hpp"
 
 
 /**

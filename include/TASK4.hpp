@@ -9,7 +9,7 @@
 
 /**
  *
- * \file TASK4.H
+ * \file TASK4.hpp
  *
  * \brief Contains namespace TASK4. Namespace TASK4 contains simple demos / examples for thread programming.
  *
