@@ -6,37 +6,39 @@ LIBS=$(shell pkg-config --libs opencv)
 OBJS= main.o TASK1.o TASK2.o  TASK3.o TASK4.o TASK5.o SHA256.o SIMPLESOCKET.o
 DEMOTARGET=main server client mainTest
 
-client.o:	./src/client.cpp
+SRCDIR= ./src/
+
+client.o:	$(SRCDIR)client.cpp
 	$(CC) -c $<  -std=c++11
 
-server.o:	./src/server.cpp
+server.o:	$(SRCDIR)server.cpp
 	$(CC) -c $<  -std=c++11
 
-SIMPLESOCKET.o:	./src/SIMPLESOCKET.cpp
+SIMPLESOCKET.o:	$(SRCDIR)SIMPLESOCKET.cpp
 	$(CC) -c $<  -std=c++11
 
-SHA256.o:	./src/SHA256.cpp
+SHA256.o:	$(SRCDIR)SHA256.cpp
 	$(CC) -c $<  -std=c++11
 
-TASK1.o:	./src/TASK1.cpp
+TASK1.o:	$(SRCDIR)TASK1.cpp
 	$(CC) -c $<  -std=c++11
 
-TASK2.o:	./src/TASK2.cpp
+TASK2.o:	$(SRCDIR)TASK2.cpp
 	$(CC) -c $<  -std=c++11
 
-TASK3.o:	./src/TASK3.cpp
+TASK3.o:	$(SRCDIR)TASK3.cpp
 	$(CC) -c $<  -std=c++11
 
-TASK4.o:	./src/TASK4.cpp
+TASK4.o:	$(SRCDIR)TASK4.cpp
 	$(CC) -c $<  -std=c++11 
 
-TASK5.o:	./src/TASK5.cpp
+TASK5.o:	$(SRCDIR)TASK5.cpp
 	$(CC) -c $<  -std=c++11 
 
-main.o:	./src/main.cpp
+main.o:	$(SRCDIR)main.cpp
 	$(CC) -c $<  -std=c++11	
 
-mainTest.o:	./src/mainTest.cpp
+mainTest.o:	$(SRCDIR)mainTest.cpp
 	$(CC) -c $<  -std=c++11		
 
 

@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "../include/TASK2.H"
+#include "../include/TASK2.hpp"
 
 using namespace std;
 

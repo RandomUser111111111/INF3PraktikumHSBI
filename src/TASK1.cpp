@@ -9,8 +9,8 @@
 #include <cstring>
 #include <iostream>
 
-#include "../include/TASK1.H"
-#include "../include/SHA256.H"
+#include "../include/TASK1.hpp"
+#include "../include/SHA256.hpp"
 
 namespace TASK1{
 
