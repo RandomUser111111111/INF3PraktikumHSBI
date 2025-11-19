@@ -16,6 +16,8 @@
 #include <unistd.h>
 
 #include "../include/SHA256.H"
+#include "../include/TASK1.H"
+#include "../include/TASK2.H"
 #include "../include/TASK3.H"
 #include "../include/TASK4.H"
 #include "../include/TASK5.H"
@@ -26,7 +28,7 @@ using namespace std;
 
 int main(){
 	srand(time(nullptr));
-    TASK3::demoTask3();
+    TASK1::demoTASK1_00();
     return 0;
 }
 
