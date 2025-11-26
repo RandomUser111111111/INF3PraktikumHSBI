@@ -23,16 +23,13 @@
 #include "../include/TASK5.hpp"
 #include "../include/TASK6.hpp"
 
+#include "../include/SIMPLESOCKET.hpp"
+
 using namespace std;
+
 
 
 int main(){
 	srand(time(nullptr));
-    TASK1::demoTASK1_00();
     return 0;
 }
-
-
-
-
-
