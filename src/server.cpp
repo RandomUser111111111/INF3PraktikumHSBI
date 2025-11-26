@@ -37,5 +37,10 @@ int main(int argc, char **argv){
 
 	srand(time(nullptr));
 	myTCPServer srv(port,25);
+
+	srv.init();
+
+	srv.world.printBoard();
+
 	srv.run();
 }
