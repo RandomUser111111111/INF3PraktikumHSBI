@@ -11,14 +11,14 @@ string myTCPServer::myResponse(string input){
         initWorld();
         MOVES = 0;
 
-        return "OK";
+        return "OK\n";
     }
 
     if(input.compare(0, 6, "COORD[") == 0){
         int endInt; // Laenge des Input
         int comma;  // Position des Kommas
 
-        comma = input.find(',');
+        comma = input.find(','); 
         endInt = input.find(']');
 
         string strX = input.substr(6, comma - (6));
