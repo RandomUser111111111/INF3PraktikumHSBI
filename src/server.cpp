@@ -24,7 +24,7 @@
 using namespace std;
 
 int main(int argc, char **argv){
-	int port = 1234;
+	int port = 1234;	// Default port = 1234
 
 	// Check cmd line parameters and set port accordingly
 	if(argc > 1){
@@ -38,9 +38,9 @@ int main(int argc, char **argv){
 	srand(time(nullptr));
 	myTCPServer srv(port,25);
 
-	srv.init();
+	srv.initWorld();
 
-	srv.world.printBoard();
+	srv.printWorld();
 
 	srv.run();
 }

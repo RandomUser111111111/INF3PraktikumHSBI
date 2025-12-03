@@ -20,25 +20,45 @@
 
 using namespace std;
 
+/**
+ *
+ *  \class myTCPclient
+ *  \brief The Class defining the game Server
+ *
+ */
+
 class myTCPServer: public TCPserver{
     private:
-        int GC_ = 0;
+        int POINTS = 0;
+        int MOVES = 0;
 
         int lX, lY;
 
+        TASK3::World world;
+
 	public:
-    TASK3::World world;
 		using TCPserver::TCPserver;
 
-        void init();    // Initialises the World, if no parameters are given the size will be set to the default
-        void init(int maxX, int maxY, int nmbFiver, int nmbFourer, int nmbThreer, int nmbTwoer);    // Initialises the World with the given size parameters
-	protected:
-        int getGC();
-        void setGC(int GC);
+        void initWorld();    // Initialises the World, if no parameters are given the size will be set to the default
+        void initWorld(int maxX, int maxY, int nmbFiver, int nmbFourer, int nmbThreer, int nmbTwoer);    // Initialises the World with the given size parameters
+	
+        void printWorld();
+    
+    protected:
+        int getPoints();
+        void setPoints(int points_);
+        
+        int getMoves();
 
 		string myResponse(string input);
 };
 
+/**
+ *
+ *  \class myTCPclient
+ *  \brief The Class defining the game Client
+ *
+ */
 
 class myTCPClient: public TCPclient{
     public:

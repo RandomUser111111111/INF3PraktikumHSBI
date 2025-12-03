@@ -15,35 +15,53 @@ string myTCPServer::myResponse(string input){
     TASK3::ShootResult tmp = this->world.shoot(x, y);
 
     if(tmp == TASK3::WATER){
-        return "WATER";
+        MOVES++;
+        return "WATER\n";
     } if(tmp == TASK3::SHIP_HIT){
-        return "SHIP HIT";
+        //POINTS++;
+        MOVES++;
+        return "SHIP HIT\n";
     } if(tmp == TASK3::SHIP_DESTROYED){
-        return "SHIP DESTROYED";
+        //POINTS++;
+        MOVES++;
+        return "SHIP DESTROYED\n";
     } if(tmp == TASK3::ALL_SHIPS_DESTROYED){
-        return "ALL SHIPS DESTROYED";
+        //POINTS++;
+        MOVES++;
+        return "ALL SHIPS DESTROYED\n";
     } if(tmp == TASK3::GAME_OVER){
-        return "GAME OVER";
+        return "GAME OVER\n";
     }
 
     return iss.str();
 }
 
-int myTCPServer::getGC(){
-    return GC_;
+int myTCPServer::getPoints(){
+    return POINTS;
 }
 
-void myTCPServer::setGC(int GC){
-    GC_ = GC;
+void myTCPServer::setPoints(int points_){
+    POINTS = points_;
 }
 
-void myTCPServer::init(){
+void myTCPServer::initWorld(){
     this->world = TASK3::World();
 }
 
-void myTCPServer::init(int maxX, int maxY, int nmbFiver, int nmbFourer, int nmbThreer, int nmbTwoer){
+void myTCPServer::initWorld(int maxX, int maxY, int nmbFiver, int nmbFourer, int nmbThreer, int nmbTwoer){
+    
     this->world = TASK3::World(maxX, maxY, nmbFiver, nmbFourer, nmbThreer, nmbTwoer);
 }
+
+int myTCPServer::getMoves(){
+    return MOVES;
+}
+
+void myTCPServer::printWorld(){
+    this->world.printBoard();
+}
+
+
 
 // TCPClient methods
 bool myTCPClient::sendData(string data){
