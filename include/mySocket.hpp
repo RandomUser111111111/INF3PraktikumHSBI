@@ -45,10 +45,6 @@ class myTCPServer: public TCPserver{
         void printWorld();
     
     protected:
-        int getPoints();
-        void setPoints(int points_);
-        
-        int getMoves();
 
 		string myResponse(string input);
 };

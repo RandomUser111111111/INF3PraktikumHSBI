@@ -9,7 +9,6 @@ string myTCPServer::myResponse(string input){
 
     if(input.compare(0, 4, "INIT")== 0){
         initWorld();
-        MOVES = 0;
 
         return "OK\n";
     }
@@ -40,20 +39,12 @@ string myTCPServer::myResponse(string input){
         TASK3::ShootResult tmp = this->world.shoot(x, y);
 
         if(tmp == TASK3::WATER){
-            MOVES++;
             return "WATER";
         } if(tmp == TASK3::SHIP_HIT){
-            //POINTS++;
-            MOVES++;
             return "SHIP HIT";
         } if(tmp == TASK3::SHIP_DESTROYED){
-            //POINTS++;
-            MOVES++;
-            //test
             return "SHIP DESTROYED";
         } if(tmp == TASK3::ALL_SHIPS_DESTROYED){
-            //POINTS++;
-            MOVES++;
             return "ALL SHIPS DESTROYED";
         } if(tmp == TASK3::GAME_OVER){
             return "GAME OVER";
@@ -69,14 +60,6 @@ string myTCPServer::myResponse(string input){
     return "ERROR\n";
 }
 
-int myTCPServer::getPoints(){
-    return POINTS;
-}
-
-void myTCPServer::setPoints(int points_){
-    POINTS = points_;
-}
-
 void myTCPServer::initWorld(){
     this->world = TASK3::World();
     lX = lY = 10;
@@ -88,10 +71,6 @@ void myTCPServer::initWorld(int maxX, int maxY, int nmbFiver, int nmbFourer, int
     lX = maxX;
     lY = maxY;
     printWorld();
-}
-
-int myTCPServer::getMoves(){
-    return MOVES;
 }
 
 void myTCPServer::printWorld(){

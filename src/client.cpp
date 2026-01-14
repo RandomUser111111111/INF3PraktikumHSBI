@@ -77,14 +77,10 @@ int widthFirst(TCPclient *c){
 
 	int moves = 0; // stores the amount of moves it takes to win the game
 
-	
-
-	int i=0;
-	bool goOn=1;
 	while(rcvData != "GAME OVER"){ // send and receive data
 		
 		if(shootX == mX){
-			shootX = 0;
+			shootX = 1;
 			shootY++;
 		} else{
 			shootX++;
