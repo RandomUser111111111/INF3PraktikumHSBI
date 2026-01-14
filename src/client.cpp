@@ -13,26 +13,38 @@
 
 using namespace std;
 
+int widthFirst(TCPclient* c);
+int *getWorldSize(TCPclient* c);
+
 int main() {
 	srand(time(NULL));
 	TCPclient c;
 	string host = "localhost";
 	string msg;
 
+	c.conn("localhost" , 2022);
+
+	int moves = widthFirst(&c);
+
+	cout << "total moves: " << moves << endl;
+
+	c.sendData("BYEBYE");
+
+	return 0;
+}
+
+int *getWorldSize(TCPclient* c){
 	string rcvData;
-	string sndData;
+	int mX, mY; // map size x & y
+	mX = mY = 0;
 
-	int mX, mY; // 
+	int *tmp;
 
-	//connect to host
-	c.conn(host , 2022);
+	c->sendData("SIZE");
+	rcvData = c->receive(32);
 
-	// get board size
-	c.sendData("SIZE");
-	rcvData = c.receive(32);
-
-	int endInt; // Laenge des Input
-    int comma;  // Position des Kommas
+	int endInt;
+    int comma;
 
     comma = rcvData.find(','); 
     endInt = rcvData.length();
@@ -45,17 +57,53 @@ int main() {
 
 	cout << "x: " << mX << " y: " << mY << endl;
 
+	tmp[0] = mX;
+	tmp[1] = mY;
+
+	return tmp;
+}
+
+int widthFirst(TCPclient *c){
+	string rcvData;
+	string sndData;
+
+	int *worldSize = getWorldSize(c);
+
+	int mX = worldSize[0];
+	int mY = worldSize[1];
+
+	int shootX, shootY;	// stores where the next shot is
+	shootX = shootY = 1; // map starts at 1
+
+	int moves = 0; // stores the amount of moves it takes to win the game
+
+	
+
 	int i=0;
 	bool goOn=1;
-	while(goOn){ // send and receive data
+	while(rcvData != "GAME OVER"){ // send and receive data
 		
-		sndData = string("client wants this");
-		cout << "client sends:" << sndData << endl;
-		c.sendData(sndData);
+		if(shootX == mX){
+			shootX = 0;
+			shootY++;
+		} else{
+			shootX++;
+		}
 
-		rcvData = c.receive(32);
+		sndData = "COORD[" + to_string(shootX) + ", " + to_string(shootY) + "]";
+
+		cout << "client sends:" << sndData << endl;
+		c->sendData(sndData);
+
+		moves++;
+
+		rcvData = c->receive(32);
 		cout << "got response:" << rcvData << endl;
-		sleep(1);
+
+		//sleep(1);
 
 	}
+
+	return moves;
 }
+

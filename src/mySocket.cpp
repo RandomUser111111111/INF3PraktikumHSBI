@@ -41,22 +41,22 @@ string myTCPServer::myResponse(string input){
 
         if(tmp == TASK3::WATER){
             MOVES++;
-            return "WATER\n";
+            return "WATER";
         } if(tmp == TASK3::SHIP_HIT){
             //POINTS++;
             MOVES++;
-            return "SHIP HIT\n";
+            return "SHIP HIT";
         } if(tmp == TASK3::SHIP_DESTROYED){
             //POINTS++;
             MOVES++;
             //test
-            return "SHIP DESTROYED\n";
+            return "SHIP DESTROYED";
         } if(tmp == TASK3::ALL_SHIPS_DESTROYED){
             //POINTS++;
             MOVES++;
-            return "ALL SHIPS DESTROYED\n";
+            return "ALL SHIPS DESTROYED";
         } if(tmp == TASK3::GAME_OVER){
-            return "GAME OVER\n";
+            return "GAME OVER";
         }
 
         return "ERROR\n";
