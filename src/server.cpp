@@ -40,7 +40,7 @@ int main(int argc, char **argv){
 
 	srv.initWorld();
 
-	srv.printWorld();
+	//srv.printWorld();
 
 	srv.run();
 }

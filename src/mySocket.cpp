@@ -14,6 +14,14 @@ string myTCPServer::myResponse(string input){
         return "OK\n";
     }
 
+    if(input.compare(0, 4, "SIZE") == 0){
+        string tmp = "";
+
+        tmp = to_string(lX) + ", " + to_string(lY);
+
+        return tmp;
+    }
+
     if(input.compare(0, 6, "COORD[") == 0){
         int endInt; // Laenge des Input
         int comma;  // Position des Kommas
@@ -71,11 +79,14 @@ void myTCPServer::setPoints(int points_){
 
 void myTCPServer::initWorld(){
     this->world = TASK3::World();
+    lX = lY = 10;
     printWorld();
 }
 
 void myTCPServer::initWorld(int maxX, int maxY, int nmbFiver, int nmbFourer, int nmbThreer, int nmbTwoer){
     this->world = TASK3::World(maxX, maxY, nmbFiver, nmbFourer, nmbThreer, nmbTwoer);
+    lX = maxX;
+    lY = maxY;
     printWorld();
 }
 
