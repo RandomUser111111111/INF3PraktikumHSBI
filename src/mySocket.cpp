@@ -41,13 +41,13 @@ string myTCPServer::myResponse(string input){
         if(tmp == TASK3::WATER){
             return "WATER";
         } if(tmp == TASK3::SHIP_HIT){
-            return "SHIP HIT";
+            return "SHIP_HIT";
         } if(tmp == TASK3::SHIP_DESTROYED){
-            return "SHIP DESTROYED";
+            return "SHIP_DESTROYED";
         } if(tmp == TASK3::ALL_SHIPS_DESTROYED){
-            return "ALL SHIPS DESTROYED";
+            return "ALL_SHIPS_DESTROYED";
         } if(tmp == TASK3::GAME_OVER){
-            return "GAME OVER";
+            return "GAME_OVER";
         }
 
         return "ERROR\n";
